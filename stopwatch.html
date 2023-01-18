@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Stopwatch</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="stopwatch.js"></script>
+    <style type="text/css">
+ body {
+      background-color: #eee;
+    }
+    #stopwatch {
+      margin: 5em auto;
+      width: 500px;
+      background-color: #fff;
+      text-align: center;
+      padding: 0.5em 1em 0.1em;
+      border-radius: 5px;
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -o-border-radius: 5px;
+      
+      box-shadow: 0 0 10px #aaa; 
+      -moz-box-shadow: 0 0 10px #aaa; 
+      -webkit-box-shadow: 0 0 10px #aaa; 
+      -o-box-shadow: 0 0 10px #aaa; 
+    }
+    #counter {
+      font-family: verdana;
+      font-size: 4em;
+    }
+    .buttons {
+      margin-top: 2em;
+      margin-bottom: 2em;
+    }
+    #btn_tick {
+      border: 1px solid #4092DE;
+      background-color: transparent;
+      cursor: pointer;
+      color: #4092DE;
+    }
+
+</style>
+</head>
+<body id="page">
+<div id="stopwatch">
+<h2>Stopwatch</h2>
+
+<div id="counter">
+<span id="hour"  >00</span>:
+<span id="minute">00</span>:
+<span id="second">00</span>
+</div>
+<div class="buttons">
+<button id="btn_start" onclick="StopWatch.start()">Start</button>
+<button id="btn_stop" onclick="StopWatch.stop()" disabled="disabled">Stop</button>
+<button id="btn_reset" onclick="StopWatch.reset()" disabled="disabled">Reset</button>
+<button id="btn_tick" onclick="StopWatch.tick()">Manual tick</button>
+</div>
+</div>
+</body>
+</html>
+
+
+ 

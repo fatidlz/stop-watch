@@ -1,0 +1,66 @@
+var StopWatch ={
+	hour:0,
+	minute:0,
+	second:0,
+	/** Clock tick: Increase one second **/
+ tick: function(){
+	if (this.second<59){
+		++this.second;
+	}
+	else{
+		this.second=0;
+		this._minuteInc();
+	}
+	this.updateDisplay();
+
+ }
+ ,
+ /** Internal: Increase minute **/
+ _minuteInc:function(){
+	if (this.minute<59){
+		++this.minute;
+	}
+	else{
+		this.minute=0;
+		this._hourInc();
+	}
+}
+,
+ /** Internal: Increase minute **/
+ _hourInc:function(){
+	if (this.hour<23){
+		++this.hour;
+	}
+	else{
+		this.hour=0;
+		}
+}
+,
+	/**  Update the display **/
+updateDisplay:function(){
+   document.getElementById('second').innerText = this._addzeros(this.second);
+   document.getElementById('minute').innerText = this._addzeros(this.minute);
+   document.getElementById('hour').innerText   = this._addzeros(this.hour);
+	
+}
+,
+/** Internal: add leading zeros to numbers **/
+_addzeros:function(n){
+	var s= n + "";
+	if (s.length<2){
+		s="0" + s;
+	}
+	return s;
+
+}
+,
+/** start stopwatch**/
+start: function(){
+	  var _this = this;
+      setInterval(function() {
+    _this.tick();
+  }, 1000);
+
+}
+
+}
